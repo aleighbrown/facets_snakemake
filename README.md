@@ -6,4 +6,4 @@ caller on a list of matched tumor/normal bams
 
 
 Requires the snp-pileup code from https://github.com/mskcc/facets/tree/master/inst/extcode
-be combined according to instructions and in the same folder as the facets.snakefile
+be compiled according to instructions and in the same folder as the facets.snakefile

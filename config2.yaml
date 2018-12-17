@@ -1,0 +1,10 @@
+## path to output
+outputdir:  outputdirectory
+#whatever you'd like the snppile parameters to be set as
+snppileup_parms: "-g -q15 -Q20 -P100 -r25,0 -d10000"
+#where the hapmap vcf on your system is located
+snpVCF: /pathto/hapmap_3.3.hg19.vcf.gz
+snppilepath: ./snp-pileup
+#path to your samples 
+sampleCSVpath: /samples.csv
+

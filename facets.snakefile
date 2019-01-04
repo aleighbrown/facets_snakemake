@@ -1,5 +1,4 @@
 configfile: "config.yaml"
-configfile: "samples.yaml"
 include: "helpers.py"
 import pandas as pd
 

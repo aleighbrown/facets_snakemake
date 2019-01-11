@@ -30,8 +30,8 @@ rule run_facets_r:
 		config["outputdir"] + "fitted/"
 	output:
 		outname=config["outputdir"] + "fitted/{sample}.snppile.csv.gz_fitted.csv"
-		
+	#path to the run_facets.R script	
 	script:
-		"/data/browna6/facets_snakemake/run_facets.R"
+		"/pathto/run_facets.R"
 
 

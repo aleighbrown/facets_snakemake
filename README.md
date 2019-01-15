@@ -7,9 +7,12 @@ caller on a list of matched tumor/normal bams
 
 Requires the snp-pileup code from https://github.com/mskcc/facets/tree/master/inst/extcode
 be compiled according to instructions and in the same folder as the facets.snakefile
-To compile
 
-"Installation
+To do so, save the "snp-pileup.cpp" and "snp-pileup.h" files into the same folder as the facets.snakefile. 
+
+Instructions below from the FACETS github:
+
+Installation
 ------------
 First, HTSlib must be installed on your system. To do that, download it from
 http://www.htslib.org/download/ and follow the "Building and installing" 
@@ -31,4 +34,4 @@ when it is installed locally and path is the location where it is available.
 
 a working version of samtools should have the HTSlib installed, if your machine has samtools, you have HTSlib
 
-Please cite the original papers.
+Please cite original papers.

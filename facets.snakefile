@@ -27,10 +27,12 @@ rule run_facets_r:
 	input:
 		gzfile = config["outputdir"] + "{sample}.snppile.csv.gz"
 	params:
-		config["outputdir"] + "fitted/"
+		config["outputdir"] + "fitted/",
+		config["minimum_nhet"]
 	output:
 		outname=config["outputdir"] + "fitted/{sample}.snppile.csv.gz_fitted.csv"
-	#path to the run_facets.R script	
+	# you'll want to change this path to point to where you're keeping the run_facets.R, 
+	#I've found it easiest to keep it in the same folder at the snakemake file		
 	script:
 		"/pathto/run_facets.R"
 

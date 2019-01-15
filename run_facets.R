@@ -1,32 +1,34 @@
-#load the library
+#load the libraries
 library(facets)
 library(data.table)
 
 #argument should be the snppileup produced in the previous step and the desired output folder
 
 set.seed(1234)
+
+#critical value to call a change
 CVAL = 150
-NHET = 2
-#inputFilename = cmdArgs[1]
+#number of hetrozygous snps required to call minor copy number
+NHET = snakemake@params[[2]]
+#the gzfile produced by snppileup
 inputFilename = snakemake@input[[1]]
+#the place where things should be written
 outputFilename = snakemake@output[[1]]
+#the directory where you want to write things
 outputDir = snakemake@params[[1]]
+#make sure the directory exists already, this will throw a warning if the output folder exists already
 dir.create(outputDir)
 print(inputFilename)
 print(paste0("Reading file: ", inputFilename))
 #read the Snp matrix, feed a file path of the snp pileup 
 rcmat = readSnpMatrix(inputFilename)
-#check that the chrM isn't first
-# if(rcmat$Chromosome[1] == "chrM"){
-# 	rcmat$Chromosome <- gsub("chr","",rcmat$Chromosome)
-# }
+
 #perform the preprocessing
 print(paste("preprocessing file",inputFilename))
 xx = preProcSample(rcmat)
 #process the sample
 print(paste("Processing file",inputFilename))
-print("cval procsample is ")
-print(as.character(CVAL))
+
 oo = procSample(xx,cval=CVAL)
 print(oo$flags)
 #we're using the emcncf2 function to allow the data to provide subclonal copy number calls as well

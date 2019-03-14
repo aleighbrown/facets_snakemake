@@ -1,4 +1,4 @@
-# facets_snakemake
+# Facets Snakemake
 Pipeline for running the FACETS copy number caller using Snakemake https://snakemake.readthedocs.io/en/stable/
 
 Requires the installation of FACETS R library. 
@@ -6,13 +6,11 @@ Requires the installation of FACETS R library.
 Simple SNAKEMAKE pipeline for running the FACETS copy number https://github.com/mskcc/facets
 caller on a list of matched tumor/normal bams
 
+Before running, please make sure you have downloaded and compiled the snp-pileup code that FACETS requires, it's available on the authors GitHub here:https://github.com/mskcc/facets/tree/master/inst/extcode
 
-Requires the snp-pileup code from https://github.com/mskcc/facets/tree/master/inst/extcode
-be compiled according to instructions and in the same folder as the facets.snakefile
+Download the "snp-pileup.cpp" and "snp-pileup.h" files into the same folder as the facets.snakefile. 
 
-To do so, save the "snp-pileup.cpp" and "snp-pileup.h" files into the same folder as the facets.snakefile. 
-
-Instructions below from the FACETS github:
+Instructions below from the FACETS github on compilation:
 
 Installation
 ------------
@@ -34,6 +32,11 @@ when htslib is available systemwide, or
 when it is installed locally and path is the location where it is available.
 "
 
-a working version of samtools should have the HTSlib installed, if your machine has samtools, you have HTSlib
+Samtools has HTSlib, so if your machine has a working version of samtools, you have HTSlib. Please make sure samtools is available systemwide before you compile. 
+
+
+The only files which need to be edited by the end user are the "config.yaml" and the "samples.csv" files. 
+
+The samples file needs a header, please fill in according to the provided sample here. 
 
 Please cite original papers.

@@ -1,4 +1,4 @@
-## path to output folder
+## path to output folder, please end with a backslash or you'll have problems
 outputdir:  /data/browna6/evolution/facets/sclc/
 # parameters given by the authors for the snp pileup, except -d, which I had increased from the default of 4000 since
 #we had quite high depth with very large copy number increases

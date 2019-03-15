@@ -34,6 +34,6 @@ rule run_facets_r:
 	# you'll want to change this path to point to where you're keeping the run_facets.R, 
 	#I've found it easiest to keep it in the same folder at the snakemake file		
 	script:
-		"/pathto/run_facets.R"
+		"config["run_facts_r_dir"]/run_facets.R"
 
 

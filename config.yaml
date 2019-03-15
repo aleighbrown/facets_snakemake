@@ -9,12 +9,14 @@ snppileup_parms: "-g -q15 -Q20 -P100 -r25,0 -d10000"
 #this is a vcf of the common human snps, make sure it's the right build
 snpVCF: /path/to/common_all.vcf.gz
 snppilepath: ./snp-pileup
+#the is the file path to the run_facets.R script
+path_to_run_r: /path/to/run_facets.R
 #the minimum number of hetrozygous snps used to call the minor copy number by FACETS, unless you have a compelling reason
 #to change this, e.g. you need the minor copy numbers of a given gene, and there aren't many hetrozygous snps at that location
 #then it's best to keep it at the default suggested by the authors
 minimum_nhet: 15
 #change this desired output folder
-outputdirPhyloInput:  /data/output
+outputdirPhyloInput:  /data/output/
 #change this to point to the new sample set. 
 sampleCSVpath: /data/samples.csv 
 
